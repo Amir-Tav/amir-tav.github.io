@@ -256,6 +256,11 @@
         requestAnimationFrame(step);
     }
 
+    // Zero them only once we know the animation can run.
+    if (!reduceMotion) {
+        counters.forEach(function (el) { el.textContent = '0' + (el.dataset.suffix || ''); });
+    }
+
     if (counters.length) {
         const countObserver = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {

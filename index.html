@@ -3,270 +3,437 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amir Tavahin - Software Engineer & ML Researcher</title>
+    <title>Amir Tavahin — Software Engineer &amp; ML Researcher</title>
+    <meta name="description" content="Amir Tavahin — Computer Science graduate (MSc AI) building machine learning systems, backend services and cloud infrastructure.">
+    <meta name="theme-color" content="#0f0f0f">
+
+    <meta property="og:title" content="Amir Tavahin — Software Engineer & ML Researcher">
+    <meta property="og:description" content="Building intelligent systems that solve real problems.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Scroll progress -->
+    <div class="progress" aria-hidden="true"><span class="progress-bar"></span></div>
+
+    <!-- Ambient background -->
+    <div class="ambient" aria-hidden="true">
+        <span class="glow glow-a"></span>
+        <span class="glow glow-b"></span>
+        <span class="grid"></span>
+    </div>
+
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">Amir Tavahin</div>
-            <ul class="nav-links">
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#main" class="logo">
+                <span class="logo-mark">AT</span>
+                <span class="logo-text">Amir Tavahin</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <span class="nav-pill" aria-hidden="true"></span>
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <div class="hero-image">
-                <img src="assets/pic.jpg" alt="Amir Tavahin">
-            </div>
-            <div class="hero-text">
-                <h1>Amir Tavahin</h1>
-                <p class="subtitle">Software Engineer & ML Researcher</p>
-                <p class="tagline">Building intelligent systems that solve real problems</p>
-                <a href="assets/Amir Tavahin CV.pdf" download class="cv-btn">📄 Download CV</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-                I'm a Computer Science graduate (MSc AI, First Class BSc) with a passion for building robust, 
-                scalable systems across machine learning, backend engineering, and cloud infrastructure. 
-                I've worked on molecular toxicity prediction, anomaly detection, 3D printer defect detection, 
-                and IoT automation systems. I believe in writing clean code, understanding problems deeply, 
-                and shipping solutions that matter.
-            </p>
-        </div>
-    </section>
-
-    <!-- Education & Certificates Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <h2>Education & Certifications</h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <div class="education-icon">🎓</div>
-                    <h3>MSc Computer Science (Artificial Intelligence)</h3>
-                    <p class="institution">Brunel University, London</p>
-                    <p class="achievement">Graduated with Merit</p>
-                </div>
-
-                <div class="education-card">
-                    <div class="education-icon">🎓</div>
-                    <h3>BSc Computer Science (Artificial Intelligence)</h3>
-                    <p class="institution">Brunel University, London</p>
-                    <p class="achievement">Graduated with First Class Honors, July 2024</p>
-                </div>
-
-                <div class="education-card">
-                    <div class="education-icon">☁️</div>
-                    <h3>AWS Certified Cloud Practitioner</h3>
-                    <p class="institution">Amazon Web Services</p>
-                    <p class="achievement">CLF-C02 - Ongoing</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <p>Python, JavaScript, TypeScript, R, SQL, SPSS</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Deep Learning</h3>
-                    <p>PyTorch, TensorFlow, Keras, CNNs, RNNs, Transformers, GANs</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Machine Learning</h3>
-                    <p>Scikit-learn, XGBoost, Supervised Learning, Unsupervised Learning, Anomaly Detection, Bandit Algorithms</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Model Interpretability & Explainability</h3>
-                    <p>SHAP, LIME, Aggregate LIME, Grad-CAM, Integrated Gradients, Feature Attribution</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Computer Vision</h3>
-                    <p>OpenCV, YOLO, VGG16, Real-time Detection, Image Processing, Video Analysis</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Natural Language Processing</h3>
-                    <p>NLTK, ChemBERTa, Transformers, Sentiment Analysis, Text Embeddings, LLMs with Ollama</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Data Processing & Visualization</h3>
-                    <p>Pandas, NumPy, Matplotlib, Seaborn, Tableau, Power BI, Data Wrangling</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Generative AI & Image Generation</h3>
-                    <p>Stable Diffusion, SDX Image Models, DALL-E Integration, Generative Adversarial Networks</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Molecular & Simulation Tools</h3>
-                    <p>CHARMM-GUI, ACEMD, HTMD, Molecular Dynamics, Conformational Analysis</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Cloud & DevOps</h3>
-                    <p>AWS, GCP, Azure, Docker, Kubernetes, CI/CD, Airflow, Cloud Run, Lambda</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>API & Backend Development</h3>
-                    <p>REST APIs, Node.js, Python Flask/FastAPI, API Management, Integration, Webhooks</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Frontend Development</h3>
-                    <p>React, Next.js, HTML, CSS, JavaScript, TypeScript, Modern Web Development</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Databases</h3>
-                    <p>SQL Server, PostgreSQL, MongoDB, Relational Databases, NoSQL, Data Modeling</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Development Tools & Systems</h3>
-                    <p>Git, GitHub, Raspberry Pi, Kali Linux, HPC, GPU Computing, Linux, Version Control</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Experimentation & Testing</h3>
-                    <p>A/B Testing, Hypothesis Testing, Statistical Validation, Multi-seed Evaluation, Unit Testing</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>IoT & Hardware</h3>
-                    <p>ESP32, Raspberry Pi, Sensor Integration, Real-time Monitoring, Embedded Systems</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card" data-project="1">
-                    <h3>Multi-Modal Molecular Toxicity Prediction</h3>
-                    <p class="tech-stack">Python • PyTorch • TensorFlow • ML Ops</p>
-                    <p>
-                        Designed a cross-attention fusion system combining SMILES transformers, graph neural networks, 
-                        and physicochemical descriptors to predict molecular toxicity across 12 biological assays.
+    <main id="main">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <p class="hero-eyebrow" data-hero="1">MSc Computer Science, Artificial Intelligence</p>
+                    <h1 data-hero="2">
+                        <span class="line"><span>Amir Tavahin</span></span>
+                    </h1>
+                    <p class="hero-role" data-hero="3">Software Engineer &amp; ML Researcher</p>
+                    <p class="hero-tagline" data-hero="4">
+                        I build machine learning systems that hold up outside the notebook —
+                        calibrated, tested, and deployed.
                     </p>
-                    <button class="learn-more-btn">Learn More →</button>
+                    <div class="hero-actions" data-hero="5">
+                        <a href="assets/Amir%20Tavahin%20CV.pdf" download class="btn btn-solid">
+                            <span class="btn-label">Download CV</span>
+                            <span class="btn-sheen" aria-hidden="true"></span>
+                        </a>
+                        <a href="#projects" class="btn btn-ghost">
+                            <span class="btn-label">See the work</span>
+                            <svg class="btn-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="project-card" data-project="2">
-                    <h3>SYN Flood Detection (Perseus)</h3>
-                    <p class="tech-stack">Python • Real-time ML • Cybersecurity</p>
-                    <p>
-                        Built an ML-based network intrusion detection system analyzing 700k+ packets in real-time. 
-                        Achieved 85% blocking efficiency with 93% false positive reduction.
-                    </p>
-                    <button class="learn-more-btn">Learn More →</button>
-                </div>
-
-                <div class="project-card" data-project="3">
-                    <h3>3D Printer Defect Detection (DefectEye)</h3>
-                    <p class="tech-stack">YOLOv11 • Raspberry Pi • IoT • Computer Vision</p>
-                    <p>
-                        Developed end-to-end deep learning pipeline for real-time 3D printing defect detection. 
-                        Optimized model deployment on Raspberry Pi, reducing print failure rates by 30%.
-                    </p>
-                    <button class="learn-more-btn">Learn More →</button>
-                </div>
-
-                <div class="project-card" data-project="4">
-                    <h3>Hydroponic Farm Automation</h3>
-                    <p class="tech-stack">ESP32 • Raspberry Pi • IoT • LLM Agents</p>
-                    <p>
-                        Designed automated hydroponic system for year-round livestock feed production. 
-                        Built hybrid IoT architecture with real-time monitoring dashboard.
-                    </p>
-                    <button class="learn-more-btn">Learn More →</button>
-                </div>
-
-                <div class="project-card" data-project="5">
-                    <h3>Primitive Neural Network (NN From Scratch)</h3>
-                    <p class="tech-stack">Python • NumPy • Machine Learning • Education</p>
-                    <p>
-                        Implemented a neural network from scratch using only NumPy to understand backpropagation 
-                        and gradient descent. Built forward/backward pass mechanics without ML frameworks.
-                    </p>
-                    <button class="learn-more-btn">Learn More →</button>
-                </div>
-
-                <div class="project-card" data-project="6">
-                    <h3>Generative Fashion Image Creation (GAN)</h3>
-                    <p class="tech-stack">PyTorch • GANs • Computer Vision • Image Generation</p>
-                    <p>
-                        Built GAN-based model for synthetic fashion image generation. Improved visual quality by 60%, 
-                        training adversarial networks for realistic outputs and reducing training time by 40%.
-                    </p>
-                    <button class="learn-more-btn">Learn More →</button>
+                <div class="hero-image" data-hero="6" id="heroImage">
+                    <div class="portrait">
+                        <div class="portrait-ring" aria-hidden="true"></div>
+                        <img src="assets/pic.jpg" alt="Portrait of Amir Tavahin" id="portraitImg">
+                        <div class="portrait-fallback" aria-hidden="true">AT</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="projects-footer">
-                <button class="more-projects-btn">More Projects</button>
+            <div class="hero-scroll" data-hero="7" aria-hidden="true">
+                <span class="hero-scroll-line"></span>
+                <span>Scroll</span>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Project Detail Modal -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-body">
+        <!-- Stats -->
+        <section class="stats" aria-label="Selected results">
+            <div class="container stats-grid">
+                <div class="stat" data-reveal>
+                    <span class="stat-value" data-count="700" data-suffix="k+">0</span>
+                    <span class="stat-label">Network packets analysed in real time</span>
+                </div>
+                <div class="stat" data-reveal>
+                    <span class="stat-value" data-count="93" data-suffix="%">0</span>
+                    <span class="stat-label">False positives removed in Perseus</span>
+                </div>
+                <div class="stat" data-reveal>
+                    <span class="stat-value" data-count="90" data-suffix="%">0</span>
+                    <span class="stat-label">Calibration error cut on the toxicity model</span>
+                </div>
+                <div class="stat" data-reveal>
+                    <span class="stat-value" data-count="12" data-suffix="">0</span>
+                    <span class="stat-label">Biological assays predicted in one system</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="about">
+            <div class="container about-inner">
+                <h2 data-reveal>About</h2>
+                <p class="lede" data-reveal>
+                    I'm a Computer Science graduate — MSc in Artificial Intelligence, First Class BSc —
+                    working across machine learning, backend engineering and cloud infrastructure.
+                </p>
+                <p data-reveal>
+                    My work has covered molecular toxicity prediction, network anomaly detection, defect
+                    detection on 3D printers and IoT automation. The thread through all of it is the same:
+                    understand the problem properly, write code that someone else can read, and ship
+                    something that still behaves when the data gets messy.
+                </p>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="education">
+            <div class="container">
+                <header class="section-head">
+                    <h2 data-reveal>Education &amp; certifications</h2>
+                </header>
+
+                <div class="education-grid">
+                    <article class="card education-card" data-reveal data-spotlight>
+                        <h3>MSc Computer Science (Artificial Intelligence)</h3>
+                        <p class="institution">Brunel University London</p>
+                        <p class="achievement">Merit</p>
+                    </article>
+
+                    <article class="card education-card" data-reveal data-spotlight>
+                        <h3>BSc Computer Science (Artificial Intelligence)</h3>
+                        <p class="institution">Brunel University London</p>
+                        <p class="achievement">First Class Honours · July 2024</p>
+                    </article>
+
+                    <article class="card education-card" data-reveal data-spotlight>
+                        <h3>AWS Certified Cloud Practitioner</h3>
+                        <p class="institution">Amazon Web Services</p>
+                        <p class="achievement in-progress">CLF-C02 · In progress</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <header class="section-head">
+                    <h2 data-reveal>Skills &amp; technologies</h2>
+                    <p class="section-sub" data-reveal>Tools I've shipped something real with.</p>
+                </header>
+
+                <div class="skills-grid">
+                    <article class="card skill-category" data-reveal data-spotlight>
+                        <h3>Programming languages</h3>
+                        <ul class="chips">
+                            <li>Python</li><li>JavaScript</li><li>TypeScript</li><li>R</li><li>SQL</li><li>SPSS</li>
+                        </ul>
+                    </article>
+
+                    <article class="card skill-category" data-reveal data-spotlight>
+                        <h3>Deep learning</h3>
+                        <ul class="chips">
+                            <li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>CNNs</li><li>RNNs</li><li>Transformers</li><li>GANs</li>
+                        </ul>
+                    </article>
+
+                    <article class="card skill-category" data-reveal data-spotlight>
+                        <h3>Machine learning</h3>
+                        <ul class="chips">
+                            <li>Scikit-learn</li><li>XGBoost</li><li>Supervised</li><li>Unsupervised</li><li>Anomaly detection</li><li>Bandits</li>
+                        </ul>
+                    </article>
+
+                    <article class="card skill-category" data-reveal data-spotlight>
+                        <h3>Interpretability</h3>
+                        <ul class="chips">
+                            <li>SHAP</li><li>LIME</li><li>Aggregate LIME</li><li>Grad-CAM</li><li>Integrated Gradients</li><li>Feature attribution</li>
+                        </ul>
+                    </article>
+
+                    <article class="card skill-category" data-reveal data-spotlight>
+                        <h3>Computer vision</h3>
+                        <ul class="chips">
+                            <li>OpenCV</li><li>YOLO</li><li>VGG16</li><li>Real-time detection</li><li>Image processing</li><li>Video analysis</li>
+                        </ul>
+                    </article>
+
+                    <article class="card skill-category" data-reveal data-spotlight>
+                        <h3>Natural language processing</h3>
+                        <ul class="chips">
+                            <li>NLTK</li><li>ChemBERTa</li><li>Transformers</li><li>Sentiment analysis</li><li>Embeddings</li><li>Ollama</li>
+                        </ul>
+                    </article>
+
+                    <article class="card skill-category" data-reveal data-spotlight>
+                        <h3>Data &amp; visualisation</h3>
+                        <ul class="chips">
+                            <li>Pandas</li><li>NumPy</li><li>Matplotlib</li><li>Seaborn</li><li>Tableau</li><li>Power BI</li>
+                        </ul>
+                    </article>
+
+                    <article class="card skill-category" data-reveal data-spotlight>
+                        <h3>Generative AI</h3>
+                        <ul class="chips">
+                            <li>Stable Diffusion</li><li>SDXL</li><li>DALL·E</li><li>GANs</li>
+                        </ul>
+                    </article>
+
+                    <article class="card skill-category" data-reveal data-spotlight>
+                        <h3>Molecular simulation</h3>
+                        <ul class="chips">
+                            <li>CHARMM-GUI</li><li>ACEMD</li><li>HTMD</li><li>Molecular dynamics</li><li>Conformational analysis</li>
+                        </ul>
+                    </article>
+
+                    <article class="card skill-category" data-reveal data-spotlight>
+                        <h3>Cloud &amp; DevOps</h3>
+                        <ul class="chips">
+                            <li>AWS</li><li>GCP</li><li>Azure</li><li>Docker</li><li>Kubernetes</li><li>CI/CD</li><li>Airflow</li><li>Lambda</li>
+                        </ul>
+                    </article>
+
+                    <article class="card skill-category" data-reveal data-spotlight>
+                        <h3>APIs &amp; backend</h3>
+                        <ul class="chips">
+                            <li>REST</li><li>Node.js</li><li>Flask</li><li>FastAPI</li><li>Webhooks</li><li>Integrations</li>
+                        </ul>
+                    </article>
+
+                    <article class="card skill-category" data-reveal data-spotlight>
+                        <h3>Frontend</h3>
+                        <ul class="chips">
+                            <li>React</li><li>Next.js</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li>
+                        </ul>
+                    </article>
+
+                    <article class="card skill-category" data-reveal data-spotlight>
+                        <h3>Databases</h3>
+                        <ul class="chips">
+                            <li>PostgreSQL</li><li>SQL Server</li><li>MongoDB</li><li>NoSQL</li><li>Data modelling</li>
+                        </ul>
+                    </article>
+
+                    <article class="card skill-category" data-reveal data-spotlight>
+                        <h3>Tools &amp; systems</h3>
+                        <ul class="chips">
+                            <li>Git</li><li>GitHub</li><li>Linux</li><li>Kali</li><li>Raspberry Pi</li><li>HPC</li><li>GPU computing</li>
+                        </ul>
+                    </article>
+
+                    <article class="card skill-category" data-reveal data-spotlight>
+                        <h3>Experimentation</h3>
+                        <ul class="chips">
+                            <li>A/B testing</li><li>Hypothesis testing</li><li>Statistical validation</li><li>Multi-seed evaluation</li><li>Unit testing</li>
+                        </ul>
+                    </article>
+
+                    <article class="card skill-category" data-reveal data-spotlight>
+                        <h3>IoT &amp; hardware</h3>
+                        <ul class="chips">
+                            <li>ESP32</li><li>Raspberry Pi</li><li>Sensor integration</li><li>Embedded systems</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <header class="section-head">
+                    <h2 data-reveal>Featured projects</h2>
+                    <p class="section-sub" data-reveal>Six things I built end to end. Open one for the detail.</p>
+                </header>
+
+                <div class="projects-grid">
+                    <article class="card project-card" data-project="1" data-reveal data-spotlight tabindex="0" role="button" aria-haspopup="dialog">
+                        <div class="project-top">
+                            <h3>Multi-modal molecular toxicity prediction</h3>
+                            <p class="tech-stack">Python · PyTorch · TensorFlow · MLOps</p>
+                        </div>
+                        <p class="project-summary">
+                            A cross-attention fusion system combining SMILES transformers, graph neural networks
+                            and physicochemical descriptors to predict toxicity across 12 biological assays.
+                        </p>
+                        <span class="project-open">
+                            <span>Open</span>
+                            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                    </article>
+
+                    <article class="card project-card" data-project="2" data-reveal data-spotlight tabindex="0" role="button" aria-haspopup="dialog">
+                        <div class="project-top">
+                            <h3>SYN flood detection — Perseus</h3>
+                            <p class="tech-stack">Python · Real-time ML · Security</p>
+                        </div>
+                        <p class="project-summary">
+                            A network intrusion detection system reading 700k+ packets live, blocking 85% of
+                            malicious IPs while cutting false positives by 93%.
+                        </p>
+                        <span class="project-open">
+                            <span>Open</span>
+                            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                    </article>
+
+                    <article class="card project-card" data-project="3" data-reveal data-spotlight tabindex="0" role="button" aria-haspopup="dialog">
+                        <div class="project-top">
+                            <h3>3D printer defect detection — DefectEye</h3>
+                            <p class="tech-stack">YOLOv11 · Raspberry Pi · IoT · Vision</p>
+                        </div>
+                        <p class="project-summary">
+                            An end-to-end vision pipeline that spots failing prints as they happen, running on a
+                            Raspberry Pi at the edge to cut wasted filament.
+                        </p>
+                        <span class="project-open">
+                            <span>Open</span>
+                            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                    </article>
+
+                    <article class="card project-card" data-project="4" data-reveal data-spotlight tabindex="0" role="button" aria-haspopup="dialog">
+                        <div class="project-top">
+                            <h3>Hydroponic farm automation</h3>
+                            <p class="tech-stack">ESP32 · Raspberry Pi · IoT · LLM agents</p>
+                        </div>
+                        <p class="project-summary">
+                            A hybrid IoT system for year-round livestock feed production, with live sensor
+                            monitoring and an LLM agent making growing recommendations.
+                        </p>
+                        <span class="project-open">
+                            <span>Open</span>
+                            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                    </article>
+
+                    <article class="card project-card" data-project="5" data-reveal data-spotlight tabindex="0" role="button" aria-haspopup="dialog">
+                        <div class="project-top">
+                            <h3>Neural network from scratch</h3>
+                            <p class="tech-stack">Python · NumPy · Fundamentals</p>
+                        </div>
+                        <p class="project-summary">
+                            Forward and backward propagation, activations and gradient descent written by hand in
+                            NumPy — no frameworks, no shortcuts.
+                        </p>
+                        <span class="project-open">
+                            <span>Open</span>
+                            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                    </article>
+
+                    <article class="card project-card" data-project="6" data-reveal data-spotlight tabindex="0" role="button" aria-haspopup="dialog">
+                        <div class="project-top">
+                            <h3>Generative fashion imagery</h3>
+                            <p class="tech-stack">PyTorch · GANs · Image generation</p>
+                        </div>
+                        <p class="project-summary">
+                            A GAN trained to synthesise fashion product images, with progressive learning to keep
+                            adversarial training stable and 40% faster.
+                        </p>
+                        <span class="project-open">
+                            <span>Open</span>
+                            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                    </article>
+                </div>
+
+                <div class="projects-footer" data-reveal>
+                    <a class="btn btn-ghost" href="https://github.com/Amir-Tav?tab=repositories" target="_blank" rel="noopener">
+                        <span class="btn-label">More projects on GitHub</span>
+                        <svg class="btn-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <div class="container contact-inner">
+                <h2 data-reveal>Let's build something</h2>
+                <p data-reveal>Open to ML engineering, data science and backend roles. Say hello.</p>
+                <div class="contact-links" data-reveal>
+                    <a href="mailto:Amir.tavahinbo@gmail.com" class="btn btn-solid">
+                        <span class="btn-label">Email me</span>
+                        <span class="btn-sheen" aria-hidden="true"></span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/amirtavahin/" class="btn btn-ghost" target="_blank" rel="noopener"><span class="btn-label">LinkedIn</span></a>
+                    <a href="https://github.com/Amir-Tav" class="btn btn-ghost" target="_blank" rel="noopener"><span class="btn-label">GitHub</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project dialog -->
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-panel" role="document">
+            <header class="modal-head">
+                <p class="modal-kicker" id="modalStack"></p>
                 <h2 id="modalTitle"></h2>
-                <p id="modalDescription"></p>
+                <button class="modal-close" id="modalClose" aria-label="Close">
+                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </button>
+            </header>
+            <div class="modal-body">
+                <p class="modal-description" id="modalDescription"></p>
                 <div id="modalDetails"></div>
             </div>
         </div>
     </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p>Let's build something great together</p>
-            <div class="contact-links">
-                <a href="mailto:Amir.tavahinbo@gmail.com" class="contact-btn">Email</a>
-                <a href="https://www.linkedin.com/in/amirtavahin/" class="contact-btn">LinkedIn</a>
-                <a href="https://github.com/Amir-Tav?tab=stars" class="contact-btn">GitHub</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Amir Tavahin. All rights reserved.</p>
+        <div class="container footer-inner">
+            <p>© 2026 Amir Tavahin</p>
+            <p class="footer-note">Built from scratch — HTML, CSS and JavaScript.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>

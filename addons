@@ -1,0 +1,28 @@
+3: {
+            title: 'AI-Powered Bitcoin Analytics',
+            stack: 'Full-Stack · Machine Learning · Real-Time Data · LLM',
+            images: [
+                {
+                    src: 'assets/prj-pics/defecteye-detection.png',
+                    alt: 'Bitcoin analytics dashboard',
+                    caption: 'Live BTC/USDT prices, technical indicators, and ML-powered price forecasts.'
+                },
+                {
+                    src: 'assets/prj-pics/defecteye-setup.png',
+                    alt: 'Raspberry Pi camera rig',
+                    caption: 'The camera rig mounted on the printer.'
+                }
+            ],
+            description: 'A real-time Bitcoin analytics platform combining deep learning, predictive modelling, and a locally hosted AI assistant to turn live market data into actionable insights.',
+            overview: 'Built a full-stack Flask application that streams live BTC/USDT market data from Binance and processes it through LSTM and XGBoost models to forecast short-term price movements. The platform calculates technical indicators, visualises market trends through interactive Plotly charts, and integrates a locally hosted Mistral 7B chatbot for natural-language market analysis. Containerised with Docker Compose, the entire system can be deployed locally with minimal setup, while dedicated latency tracking monitors network, processing, and end-to-end performance.',
+            results: [
+                'Developed a 3-layer LSTM model using 60-minute price sequences to forecast the next 5 Bitcoin candles, achieving approximately 52–54% directional accuracy',
+                'Implemented a 100-tree XGBoost model for short-term price predictions, achieving approximately 51–53% directional accuracy',
+                'Optimised model inference to under 50ms for LSTM and approximately 20ms for XGBoost',
+                'Integrated live Binance market data, technical indicators, news sentiment analysis, and an interactive dashboard with 60-second auto-refresh',
+                'Deployed a locally hosted Mistral 7B chatbot for context-aware market analysis without relying on external LLM APIs',
+                'Containerised the Flask application and AI services using Docker Compose for reproducible, self-contained deployment'
+            ],
+            tech: ['Python','Flask','PyTorch','LSTM','XGBoost','Mistral 7B','Ollama','Docker','Binance API','Plotly'],
+            impact: 'A self-contained financial intelligence platform that brings real-time market monitoring, predictive machine learning, and conversational AI into a single interface — demonstrating how complex ML systems can be deployed as accessible, production-oriented web applications.'
+        },

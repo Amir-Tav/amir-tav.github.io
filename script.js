@@ -16,6 +16,11 @@
         1: {
             title: 'Multi-modal molecular toxicity prediction',
             stack: 'MSc dissertation · PyTorch · TensorFlow',
+            image: {
+                src: 'assets/prj-pics/Toxicity-prediction.png',
+                alt: 'Cross-attention fusion architecture',
+                caption: 'How the three molecular representations are fused before the per-assay heads.'
+            },
             description: 'A machine learning system that predicts molecular toxicity across multiple biological assays using a cross-attention fusion architecture.',
             overview: 'This dissertation combined three views of the same molecule — SMILES transformers, graph neural networks and physicochemical descriptors — into one prediction system, letting cross-attention decide which view to trust for each compound.',
             results: [
@@ -30,6 +35,11 @@
         2: {
             title: 'SYN flood detection — Perseus',
             stack: 'Security · Real-time ML · Python',
+            image: {
+                src: 'assets/prj-pics/Syn-Flood.png',
+                alt: 'Perseus real-time detection pipeline',
+                caption: 'Packet capture through to blocking decision.'
+            },
             description: 'A network intrusion detection system that identifies and blocks SYN flood attacks live, with very few false alarms.',
             overview: 'Perseus reads network traffic as it arrives, learns the shape of normal connection behaviour, and drops the sources behind denial-of-service floods before they exhaust the server.',
             results: [
@@ -41,23 +51,36 @@
             tech: ['Python', 'T-Shark', 'Scikit-learn', 'Streaming pipelines'],
             impact: 'Shows that ML-based defence can run at line rate without flagging legitimate users — the trade-off that usually keeps these systems out of production.'
         },
+        // Bitcoin
         3: {
-            title: '3D printer defect detection — DefectEye',
-            stack: 'Computer vision · Edge · IoT',
-            description: 'A vision system that watches a 3D print and catches failures as they happen, saving filament and machine time.',
-            overview: 'A camera on the print bed feeds a YOLOv11 model running on a Raspberry Pi. When the model sees spaghetti failures or layer misalignment starting, it alerts the operator rather than letting the print run for hours.',
+            title: 'AI-Powered Bitcoin Analytics',
+            stack: 'Full-Stack · Machine Learning · Real-Time Data · LLM',
+            image: {
+                    src: 'assets/prj-pics/Bitcoin Analytics.png',
+                    alt: 'Bitcoin analytics dashboard',
+                    caption: 'Live BTC/USDT prices, technical indicators, and ML-powered price forecasts.'
+                },
+            description: 'A real-time Bitcoin analytics platform combining deep learning, predictive modelling, and a locally hosted AI assistant to turn live market data into actionable insights.',
+            overview: 'Built a full-stack Flask application that streams live BTC/USDT market data from Binance and processes it through LSTM and XGBoost models to forecast short-term price movements. The platform calculates technical indicators, visualises market trends through interactive Plotly charts, and integrates a locally hosted Mistral 7B chatbot for natural-language market analysis. Containerised with Docker Compose, the entire system can be deployed locally with minimal setup, while dedicated latency tracking monitors network, processing, and end-to-end performance.',
             results: [
-                'Real-time detection of spaghetti failures and layer shift',
-                'Runs on a Raspberry Pi with optimised inference',
-                'An estimated 30% reduction in failed prints and wasted material',
-                '64% accuracy today, with work ongoing towards 80%+'
-            ],
-            tech: ['YOLOv11', 'PyTorch', 'OpenCV', 'Raspberry Pi'],
-            impact: 'Quality control that costs the price of a Pi and a webcam — the kind of automation small workshops can actually afford.'
+                'Developed a 3-layer LSTM model using 60-minute price sequences to forecast the next 5 Bitcoin candles, achieving approximately 52–54% directional accuracy',
+                'Implemented a 100-tree XGBoost model for short-term price predictions, achieving approximately 51–53% directional accuracy',
+                'Optimised model inference to under 50ms for LSTM and approximately 20ms for XGBoost',
+                'Integrated live Binance market data, technical indicators, news sentiment analysis, and an interactive dashboard with 60-second auto-refresh',
+                'Deployed a locally hosted Mistral 7B chatbot for context-aware market analysis without relying on external LLM APIs',
+                'Containerised the Flask application and AI services using Docker Compose for reproducible, self-contained deployment'
+           ],
+            tech: ['Python','Flask','PyTorch','LSTM','XGBoost','Mistral 7B','Ollama','Docker','Binance API','Plotly'],
+            impact: 'A self-contained financial intelligence platform that brings real-time market monitoring, predictive machine learning, and conversational AI into a single interface — demonstrating how complex ML systems can be deployed as accessible, production-oriented web applications.'
         },
         4: {
             title: 'Hydroponic farm automation',
             stack: 'IoT · LLM agents · Agriculture',
+            image: {
+                src: 'assets/prj-pics/hydroponics-architecture.png',
+                alt: 'ESP32 and Raspberry Pi system architecture',
+                caption: 'Sensors and actuators through to the dashboard and LLM agent.'
+            },
             description: 'An automated hydroponic system for growing livestock feed year-round, with live monitoring and AI-driven advice.',
             overview: 'ESP32 boards handle sensors and actuators; a Raspberry Pi acts as the hub, dashboard and brain. A local LLM agent reads the sensor history and recommends adjustments to the growing cycle.',
             results: [
@@ -73,6 +96,11 @@
         5: {
             title: 'Neural network from scratch',
             stack: 'Fundamentals · NumPy',
+            image: {
+                src: 'assets/prj-pics/nn-from-scratch-diagram.png',
+                alt: 'Network architecture and gradient flow',
+                caption: 'Forward pass and the gradients flowing back through it.'
+            },
             description: 'A neural network built entirely in NumPy — forward pass, backpropagation and optimisation written by hand.',
             overview: 'No frameworks. Every matrix multiplication, gradient and weight update written out, so the maths behind training is visible rather than hidden behind an API call.',
             results: [
@@ -87,6 +115,11 @@
         6: {
             title: 'Generative fashion imagery',
             stack: 'Generative AI · PyTorch',
+            image: {
+                src: 'assets/prj-pics/gan-architecture.png',
+                alt: 'Generator and discriminator architecture',
+                caption: 'The adversarial setup used for training.'
+            },
             description: 'A generative adversarial network trained to synthesise realistic fashion product images.',
             overview: 'A generator and discriminator trained against each other to produce clothing images, with progressive learning and early stopping used to keep a notoriously unstable training process on track.',
             results: [
@@ -319,6 +352,49 @@
     const modalDetails = document.getElementById('modalDetails');
     let lastFocused = null;
 
+    const modalMedia = document.getElementById('modalMedia');
+
+    /* Each call gets a ticket. A load or error event from a previous project
+       arrives with a stale ticket and is ignored, so one project's missing
+       image can never hide the next project's artwork. */
+    let mediaTicket = 0;
+
+    function renderMedia(image) {
+        mediaTicket += 1;
+        const ticket = mediaTicket;
+
+        modalMedia.textContent = '';
+
+        if (!image || !image.src) {
+            modalMedia.hidden = true;
+            return;
+        }
+
+        const figure = document.createElement('figure');
+
+        const img = document.createElement('img');
+        img.src = image.src;
+        img.alt = image.alt || '';
+
+        // A missing file hides the block instead of showing a broken icon.
+        img.addEventListener('error', function () {
+            if (ticket !== mediaTicket) return;
+            modalMedia.textContent = '';
+            modalMedia.hidden = true;
+        });
+
+        figure.appendChild(img);
+
+        if (image.caption) {
+            const caption = document.createElement('figcaption');
+            caption.textContent = image.caption;
+            figure.appendChild(caption);
+        }
+
+        modalMedia.appendChild(figure);
+        modalMedia.hidden = false;
+    }
+
     function buildList(heading, items) {
         const group = document.createElement('div');
         group.className = 'modal-group';
@@ -381,6 +457,7 @@
         modalTitle.textContent = project.title;
         modalStack.textContent = project.stack;
         modalDescription.textContent = project.description;
+        renderMedia(project.image);
 
         modalDetails.textContent = '';
         modalDetails.appendChild(buildText('Overview', project.overview));

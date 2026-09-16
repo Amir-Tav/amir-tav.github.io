@@ -986,6 +986,45 @@ h3 {
 .modal-body::-webkit-scrollbar { width: 8px; }
 .modal-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
 
+/* Project images inside the dialog */
+
+.modal-media {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 26px;
+}
+
+.modal-media[hidden] {
+    display: none;
+}
+
+.modal-media figure {
+    margin: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #0c0c0c;
+    transition: border-color 0.35s var(--ease);
+}
+
+.modal-media figure:hover {
+    border-color: var(--border-hi);
+}
+
+.modal-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.modal-media figcaption {
+    padding: 10px 14px;
+    border-top: 1px solid var(--border);
+    color: var(--text-tertiary);
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
 .modal-description {
     color: var(--text-primary);
     font-size: 1.05rem;
